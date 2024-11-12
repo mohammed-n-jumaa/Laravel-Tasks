@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        @yield('content') <!-- هنا سيتم إدراج المحتوى الرئيسي لكل صفحة -->
+        @yield('content')
     </div>
 </body>
 </html>

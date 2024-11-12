@@ -4,7 +4,6 @@
 <div class="container">
     <h1 class="my-4 text-center">To-Do List</h1>
 
-    <!-- زر التحويل بين وضع الأدمن والمستخدم -->
     <form action="{{ route('tasks.index') }}" method="GET" class="text-center mb-4">
         <div class="input-group" style="max-width: 300px; margin: 0 auto;">
             <input type="text" name="admin_code" class="form-control" placeholder="Enter admin code (optional)" aria-label="Admin Code">
@@ -14,7 +13,6 @@
         </div>
     </form>
 
-    <!-- نموذج إضافة مهمة جديدة -->
     <div class="card mb-4">
         <div class="card-header">Add a New Task</div>
         <div class="card-body">
@@ -28,7 +26,6 @@
         </div>
     </div>
 
-    <!-- قائمة المهام -->
     <div class="card">
         <div class="card-header">Tasks</div>
         <div class="card-body">
@@ -65,6 +62,9 @@
                                                 {{ $task->is_completed ? 'Undo' : 'Complete' }}
                                             </button>
                                         </form>
+
+                                        <a href="{{ route('tasks.edit', $task) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+
                                         <form action="{{ route('tasks.destroy', $task) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
